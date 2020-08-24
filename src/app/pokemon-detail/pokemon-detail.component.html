@@ -1,5 +1,17 @@
 <mat-card *ngIf="pokemon" class="pokemon">
-  <img src="assets/images/{{ pokemon.id | number: '3.0' }}.png" alt="" />
+  <!-- <img src="assets/images/{{ pokemon.id | number: '3.0' }}.png" alt="" /> -->
+  <img
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{
+      pokemon.id
+    }}.png"
+    alt=""
+  />
+  <!-- <img
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{
+      pokemon.id
+    }}.svg"
+    alt=""
+  /> -->
   <p>{{ pokemon.name.japanese }}</p>
   <p>{{ pokemon.type | type }}</p>
   <p>体力: {{ pokemon.base.HP }}</p>

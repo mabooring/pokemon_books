@@ -1,4 +1,4 @@
-import { POKEMONS } from './../models/pokemons';
+import { POKEMONS } from '../models/pokemons';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RadialChartOptions, ChartDataSets, ChartType } from 'chart.js';
@@ -27,7 +27,6 @@ export class PokemonDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    debugger;
     this.route.paramMap.subscribe((map) => {
       const id = +map.get('id');
       this.pokemon = this.pokemons[id - 1];

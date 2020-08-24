@@ -1,14 +1,24 @@
 :host {
-    display: block;
-    padding: 24px;
+  display: block;
+  padding: 24px;
 }
 
 .grid {
-    display: grid;
-    gap: 24px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 mat-card {
-    text-align: center;
+  text-align: center;
+}
+
+button {
+  text-align: center;
+  width: 100px;
+  margin: 24px 0px 24px 8px;
+}
+
+.offsetInput {
+  margin: 24px 0px 24px 8px;
 }

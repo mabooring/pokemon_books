@@ -1,10 +1,32 @@
-
-<div class="grid">
-    <mat-card *ngFor="let pokemon of pokemons" routerLink="/{{ pokemon.id }}">
-        <img src="assets/thumbnails/{{ pokemon.id | number: '3.0' }}.png" alt="">
-        <p>{{ pokemon.name.japanese }}</p>
-    </mat-card>
+<!-- Pokemon-books original -->
+<!-- <div class="grid">
+  <mat-card *ngFor="let pokemon of pokemons" routerLink="/{{ pokemon.id }}">
+    <img src="assets/thumbnails/{{ pokemon.id | number: '3.0' }}.png" alt="" />
+    <p>{{ pokemon.name.japanese }}</p>
+  </mat-card>
+</div> -->
+<div class="button">
+  <button mat-raised-button color="primary" (click)="decrementOffset()">
+    Previous25
+  </button>
+  <button mat-raised-button color="primary" (click)="incrementOffset()">
+    Next25
+  </button>
+  Offset:
+  <input
+    class="offsetInput"
+    type="number"
+    name="offset"
+    size="10"
+    maxlength="10"
+    [(ngModel)]="offset"
+    (input)="setOffsetValue()"
+  />
 </div>
 
-
-
+<div *ngIf="apipokemons" class="grid">
+  <mat-card *ngFor="let pokemon of apipokemons" routerLink="/{{ pokemon.id }}">
+    <img src="{{ pokemon.thumbnail }}" alt="" />
+    <p>{{ pokemon.id }}:{{ pokemon.name }}</p>
+  </mat-card>
+</div>
